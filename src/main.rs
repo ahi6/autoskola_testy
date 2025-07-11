@@ -78,7 +78,7 @@ pub fn TestQuestion(question: Question) -> Element {
             }
             div {
                 id: "answers",
-                class: "w-full flex flex-row items-center justify-center gap-2",
+                class: "w-full flex flex-row justify-between items-stretch gap-2",
                 Answer { option: question.option_a }
                 Answer { option: question.option_b }
                 if let Some(option_c) = question.option_c {
@@ -108,10 +108,10 @@ pub fn Answer(option: QuestionOption) -> Element {
 
     rsx! {
         a {
-            class: "block w-1/3",
+            class: "flex-1 block",
             href: "#",
             div {
-                class: "border-2 border-gray-300 bg-white p-4 rounded-lg",
+                class: "border-2 border-gray-300 bg-white p-4 rounded-lg h-full w-full flex items-center justify-center",
                 {content}
             }
         }
