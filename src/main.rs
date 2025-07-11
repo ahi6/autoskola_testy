@@ -5,7 +5,7 @@ use dioxus::prelude::*;
 
 use downloader4etesty2::types::*;
 
-use components::test_question::TestQuestion;
+use components::TestQuestion;
 
 const FAVICON: Asset = asset!("/assets/favicon.ico");
 const TAILWIND_CSS: Asset = asset!("/assets/tailwind.css");

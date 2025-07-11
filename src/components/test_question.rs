@@ -2,7 +2,7 @@ use dioxus::prelude::*;
 
 use downloader4etesty2::types::*;
 
-use crate::components::answer::Answer;
+use crate::components::Answer;
 use crate::utils::resolve_asset_path;
 
 #[component]

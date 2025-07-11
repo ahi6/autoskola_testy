@@ -1,2 +1,5 @@
-pub(crate) mod answer;
-pub(crate) mod test_question;
+mod answer;
+mod test_question;
+
+pub use answer::Answer;
+pub use test_question::TestQuestion;
