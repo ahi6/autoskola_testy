@@ -25,3 +25,6 @@
 # already existing elements were commented out
 
 #/target
+
+# pretty sure i'm not allowed to redistribute downloader output
+/assets/output

@@ -1,4 +1,5 @@
 [application]
+asset_dir = "assets" # TODO: Make sure the app doesn't need any assets
 
 [web.app]
 
