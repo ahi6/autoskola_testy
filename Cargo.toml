@@ -8,6 +8,7 @@ edition = "2021"
 
 [dependencies]
 dioxus = { version = "0.6.0", features = ["router"] }
+dioxus-sdk = {version = "0.6.0", features = ["storage"]}
 downloader4etesty2 = { path = "../downloader4etesty2" }
 # reqwest = "0.12.22"
 reqwest = { version = "0.12.20", features = [

@@ -72,23 +72,60 @@ fn QuestionView() -> Element {
 
 #[component]
 pub fn HomeView() -> Element {
-    rsx! {
-        div {
-            class: "flex flex-col justify-center items-center h-screen bg-gray-100 p-8 gap-4",
-            h1 {
-                class: "text-5xl font-bold md-4",
-                "Pick a topic"
-            }
-            ul {
-                li {
-                    a {
-                        class: "text-2xl",
-                        href: "#",
-                        "Topic name"
+    let mut topics_signal: Signal<Option<Vec<Topic>>> = dioxus_sdk::storage::use_synced_storage::<
+        dioxus_sdk::storage::LocalStorage,
+        Option<Vec<Topic>>,
+    >("topics".to_string(), || None);
+
+    let topics_cloned = topics_signal.read().clone();
+
+    match topics_cloned {
+        Some(topics) => rsx! {
+            div {
+                class: "flex flex-col justify-center items-center h-screen bg-gray-100 p-8 gap-4",
+                h1 {
+                    class: "text-5xl font-bold md-4",
+                    "Pick a topic"
+                }
+                ul {
+                    li {
+                        for topic in topics {
+                            a {
+                                class: "text-2xl",
+                                href: "#",
+                                "{topic.title}"
+                            }
+                        }
+
                     }
                 }
             }
-        }
+        },
+        None => rsx! {
+            div {
+                class: "flex flex-col justify-center items-center h-screen bg-gray-100 p-8 gap-8",
+                h1 {
+                    class: "text-5xl font-bold md-4",
+                    "Welcome"
+                }
+                p {
+                    class: "text-xl",
+                    "Please begin by downloading some topics"
+                }
+                button {
+                    class: "text-xl text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800",
+                    onclick: move |_e| {
+                        let mut vec = Vec::new();
+                        vec.push(Topic{
+                            title: "Test title from button".to_string(),
+                            url: "Test url".to_string(),
+                        });
+                        *topics_signal.write() = Some(vec);
+                    },
+                    "Download"
+                }
+            }
+        },
     }
 }
 
