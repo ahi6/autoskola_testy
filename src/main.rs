@@ -18,6 +18,15 @@ fn main() {
 
 #[component]
 fn App() -> Element {
+    rsx! {
+        document::Link { rel: "icon", href: FAVICON }
+        document::Link { rel: "stylesheet", href: TAILWIND_CSS }
+        Router::<Route> {}
+    }
+}
+
+#[component]
+fn QuestionView() -> Element {
     let placeholder_question = Question::default();
 
     static PATH_TO_QUESTIONS: Asset = asset!("/assets/output/Znalost dopravních znače.json");
@@ -53,8 +62,41 @@ fn App() -> Element {
     .unwrap();
 
     rsx! {
-        document::Link { rel: "icon", href: FAVICON }
-        document::Link { rel: "stylesheet", href: TAILWIND_CSS }
-        {question_rsx}
+        div {
+            class: "flex flex-col justify-center h-screen bg-gray-100 p-8",
+            {question_rsx}
+        }
+
     }
+}
+
+#[component]
+pub fn HomeView() -> Element {
+    rsx! {
+        div {
+            class: "flex flex-col justify-center items-center h-screen bg-gray-100 p-8 gap-4",
+            h1 {
+                class: "text-5xl font-bold md-4",
+                "Pick a topic"
+            }
+            ul {
+                li {
+                    a {
+                        class: "text-2xl",
+                        href: "#",
+                        "Topic name"
+                    }
+                }
+            }
+        }
+    }
+}
+
+#[derive(Routable, Clone, PartialEq)]
+enum Route {
+    #[route("/")]
+    QuestionView,
+
+    #[route("/home")]
+    HomeView,
 }

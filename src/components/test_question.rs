@@ -9,10 +9,10 @@ use crate::utils::resolve_asset_path;
 pub fn TestQuestion(question: Question) -> Element {
     rsx! {
         div {
-            class: "flex flex-col items-center h-screen bg-gray-100 p-8",
+            class: "flex flex-col items-center m-8",
             div {
                 id: "question",
-                class: "w-full border-2 border-gray-300 bg-white p-4 rounded-lg p-8 m-8 flex flex-col items-center justify-center gap-4",
+                class: "w-full border-2 border-gray-300 bg-white p-4 rounded-lg p-8 mb-8 flex flex-col items-center justify-center gap-4",
                 p {
                     class: "text-xs font-extralight",
                     "{question.code}" }
