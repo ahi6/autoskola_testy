@@ -30,7 +30,7 @@ fn App() -> Element {
 }
 
 #[derive(Routable, Clone, PartialEq)]
-enum Route {
+pub enum Route {
     #[route("/")]
     QuestionView,
 

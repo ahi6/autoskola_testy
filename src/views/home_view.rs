@@ -1,6 +1,8 @@
 use dioxus::prelude::*;
 use downloader4etesty2::types::*;
 
+use crate::Route;
+
 #[component]
 pub fn HomeView() -> Element {
     // Persistent Version:
@@ -34,11 +36,9 @@ pub fn HomeView() -> Element {
                 ul {
                     for topic in topics {
                         li {
-                            a {
+                            Link {
                                 class: "text-2xl cursor-pointer",
-                                onclick: move |_e| {
-                                    use_navigator().push("/");
-                                },
+                                to: Route::QuestionView,
                                 "{topic.title}"
                             }
                         }

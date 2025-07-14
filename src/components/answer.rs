@@ -1,6 +1,6 @@
 use dioxus::prelude::*;
 
-use crate::utils::resolve_asset_path;
+use crate::{utils::resolve_asset_path, Route};
 use downloader4etesty2::types::*;
 
 #[component]
@@ -21,12 +21,9 @@ pub fn Answer(option: QuestionOption) -> Element {
     };
 
     rsx! {
-        a {
+        Link {
             class: "flex-1 block cursor-pointer",
-            // href: "/home",
-            onclick: move |_e| {
-                use_navigator().push("/home");
-            },
+            to: Route::HomeView,
             div {
                 class: "border-2 border-gray-300 bg-white p-4 rounded-lg h-full w-full flex items-center justify-center",
                 {content}
