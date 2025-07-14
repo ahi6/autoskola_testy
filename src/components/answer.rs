@@ -23,7 +23,10 @@ pub fn Answer(option: QuestionOption) -> Element {
     rsx! {
         a {
             class: "flex-1 block",
-            href: "#",
+            // href: "/home",
+            onclick: move |_e| {
+                use_navigator().push("/home");
+            },
             div {
                 class: "border-2 border-gray-300 bg-white p-4 rounded-lg h-full w-full flex items-center justify-center",
                 {content}
