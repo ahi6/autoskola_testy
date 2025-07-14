@@ -5,7 +5,6 @@ mod views;
 use dioxus::prelude::*;
 
 use dioxus_sdk::set_dir;
-use downloader4etesty2::types::*;
 
 use views::HomeView;
 use views::QuestionView;
@@ -32,8 +31,8 @@ fn App() -> Element {
 #[derive(Routable, Clone, PartialEq)]
 pub enum Route {
     #[route("/")]
-    QuestionView,
-
-    #[route("/home")]
     HomeView,
+
+    #[route("/topic/:topic_title")]
+    QuestionView { topic_title: String },
 }

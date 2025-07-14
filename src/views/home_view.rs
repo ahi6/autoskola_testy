@@ -38,7 +38,9 @@ pub fn HomeView() -> Element {
                         li {
                             Link {
                                 class: "text-2xl cursor-pointer",
-                                to: Route::QuestionView,
+                                to: Route::QuestionView {
+                                    topic_title: {topic.title.clone()},
+                                },
                                 "{topic.title}"
                             }
                         }

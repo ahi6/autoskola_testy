@@ -5,7 +5,7 @@ use crate::components::TestQuestion;
 use crate::BASE_URL;
 
 #[component]
-pub fn QuestionView() -> Element {
+pub fn QuestionView(topic_title: String) -> Element {
     let placeholder_question = Question::default();
 
     static PATH_TO_QUESTIONS: Asset = asset!("/assets/output/Znalost dopravních znače.json");
