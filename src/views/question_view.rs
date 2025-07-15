@@ -13,20 +13,44 @@ pub fn QuestionView(topic_title: String) -> Element {
             Option<Result<Vec<Question>, String>>,
         >(calculate_hash(&topic_title).to_string(), || None);
 
-    let question_index = use_hook(|| 0 as usize);
+    let mut question_index = use_signal(|| 0 as usize);
 
     let questions_cloned = questions_signal.read().clone();
     let question_rsx = match questions_cloned {
         Some(Ok(questions)) => {
             let question = questions
-                .get(question_index)
+                .get(*question_index.read())
                 .cloned()
                 .unwrap_or(Question::default());
 
             rsx! {
                 TestQuestion {
                     question
-                }
+                },
+                div {
+                    class: "absolute bottom-0 mb-4 z-5 flex justify-center gap-4",
+                    button {
+                        onclick: move |_e| {
+                            let checked_new_index = (*question_index.read()).checked_sub(1);
+                            if let Some(new_index) = checked_new_index {
+                                *question_index.write() = new_index;
+                            }
+                        },
+                        "<- Previous Question",
+                    },
+                    button {
+                        "?? Random Question",
+                    },
+                    button {
+                        onclick: move |_e| {
+                            let new_index = *question_index.read() + 1;
+                            if new_index < questions.len() {
+                                *question_index.write() = new_index;
+                            }
+                        },
+                        "-> Next Question",
+                    },
+                },
             }
         }
         Some(Err(error_msg)) => rsx! {
@@ -71,6 +95,7 @@ pub fn QuestionView(topic_title: String) -> Element {
             class: "flex flex-col justify-center h-screen bg-gray-100 p-8",
             {question_rsx}
         }
+
 
     }
 }
