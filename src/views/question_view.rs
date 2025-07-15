@@ -61,6 +61,13 @@ pub fn QuestionView(topic_title: String) -> Element {
 
     rsx! {
         div {
+            class: "absolute top-0 mt-4 ml-4 z-10",
+            Link {
+                to: "/",
+                "<- Back"
+            }
+        }
+        div {
             class: "flex flex-col justify-center h-screen bg-gray-100 p-8",
             {question_rsx}
         }

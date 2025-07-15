@@ -23,8 +23,6 @@
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
-    --text-3xl: 1.875rem;
-    --text-3xl--line-height: calc(2.25 / 1.875);
     --text-4xl: 2.25rem;
     --text-4xl--line-height: calc(2.5 / 2.25);
     --text-5xl: 3rem;
@@ -183,8 +181,20 @@
   }
 }
 @layer utilities {
-  .static {
-    position: static;
+  .absolute {
+    position: absolute;
+  }
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
+  .-z-15 {
+    z-index: calc(15 * -1);
+  }
+  .z-10 {
+    z-index: 10;
+  }
+  .z-15 {
+    z-index: 15;
   }
   .m-8 {
     margin: calc(var(--spacing) * 8);
@@ -192,14 +202,26 @@
   .me-2 {
     margin-inline-end: calc(var(--spacing) * 2);
   }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
+  .mr-4 {
+    margin-right: calc(var(--spacing) * 4);
+  }
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
   }
   .mb-3 {
     margin-bottom: calc(var(--spacing) * 3);
   }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
   .mb-8 {
     margin-bottom: calc(var(--spacing) * 8);
+  }
+  .ml-4 {
+    margin-left: calc(var(--spacing) * 4);
   }
   .block {
     display: block;
