@@ -23,6 +23,8 @@ pub fn QuestionView(topic_title: String) -> Element {
                 .cloned()
                 .unwrap_or(Question::default());
 
+            let questions_len = questions.len();
+
             rsx! {
                 TestQuestion {
                     question
@@ -39,12 +41,16 @@ pub fn QuestionView(topic_title: String) -> Element {
                         "<- Previous Question",
                     },
                     button {
+                        onclick: move |_e| {
+                            let new_index = rand::random_range(0..questions_len);
+                            *question_index.write() = new_index;
+                        },
                         "?? Random Question",
                     },
                     button {
                         onclick: move |_e| {
                             let new_index = *question_index.read() + 1;
-                            if new_index < questions.len() {
+                            if new_index < questions_len {
                                 *question_index.write() = new_index;
                             }
                         },
