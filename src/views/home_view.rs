@@ -10,20 +10,12 @@ pub fn HomeView() -> Element {
         dioxus_sdk::storage::LocalStorage,
         Option<Vec<Topic>>,
     >("topics".to_string(), || None);
-    //
+
     // In-memory only version:
     // let mut topics_signal: Signal<Option<Vec<Topic>>> =
     //     dioxus_sdk::storage::use_persistent("topicss", || None);
 
     let topics_cloned = topics_signal.read().clone();
-
-    // let topics_cloned = Some(
-    //     [Topic {
-    //         title: "a".to_string(),
-    //         url: "b".to_string(),
-    //     }]
-    //     .to_vec(),
-    // );
 
     match topics_cloned {
         Some(topics) => rsx! {
