@@ -22,8 +22,9 @@ pub fn TestQuestion(question: Question) -> Element {
                 if let Some(image) = question.question_image {
                     img {
                         src: resolve_asset_path(&image),
-                        width: "100px",
-                        height: "100px"
+                        class: "object-fill",
+                        // width: "100px",
+                        // height: "100px"
                     }
                 }
             }
