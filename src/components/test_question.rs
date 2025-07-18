@@ -23,8 +23,13 @@ pub fn TestQuestion(question: Question) -> Element {
                     img {
                         src: resolve_asset_path(&image),
                         class: "object-fill",
-                        // width: "100px",
-                        // height: "100px"
+                    }
+                }
+                if let Some(video) = question.question_video {
+                    video {
+                        src: resolve_asset_path(&video),
+                        class: "object-fill",
+                        autoplay: true,
                     }
                 }
             }

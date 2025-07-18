@@ -58,7 +58,10 @@ pub fn Answer(option: QuestionOption) -> Element {
         }
         div {
             // Dummy div to tell tailwind what classes I want available
-            class: "-z-100 absolute opacity-0 h-0 w-0 border-2 border-gray-300 bg-white p-4 rounded-lg h-full w-full flex items-center justify-center bg-white bg-green-400 bg-red-400"
+            class: "-z-100 absolute opacity-0 h-0 w-0 overflow-hidden",
+            div {
+                class: "border-2 border-gray-300 bg-white p-4 rounded-lg h-full w-full flex items-center justify-center bg-white bg-green-400 bg-red-400",
+            }
         }
     }
 }

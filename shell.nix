@@ -39,6 +39,11 @@ in
             rustPlatform.bindgenHook
             pkgs.tailwindcss
 	    pkgs.nodejs
+					pkgs.gst_all_1.gstreamer
+					pkgs.gst_all_1.gst-plugins-good
+					pkgs.gst_all_1.gst-plugins-bad
+					pkgs.gst_all_1.gst-plugins-ugly
+					pkgs.gst_all_1.gst-plugins-base
           ]
           ++ [
             pkgs.python3
@@ -71,6 +76,11 @@ in
       gtk3
       pango
       webkitgtk_4_1
+      gst_all_1.gstreamer
+      gst_all_1.gst-plugins-good
+      gst_all_1.gst-plugins-bad
+      gst_all_1.gst-plugins-ugly
+      gst_all_1.gst-plugins-base
       xdotool
         ];
         RUSTC_VERSION = overrides.toolchain.channel;
@@ -93,6 +103,6 @@ in
           ]}:$LD_LIBRARY_PATH"
         '';
             PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
-            
+
       }
   ) {}
