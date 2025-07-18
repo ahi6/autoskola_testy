@@ -68,7 +68,6 @@ pub fn HomeView() -> Element {
                             *topics_signal.write() = Some(topics);
                             }
                         );
-
                     },
                     "Download"
                 }
