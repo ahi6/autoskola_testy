@@ -32,6 +32,7 @@ pub fn QuestionView(topic_title: String) -> Element {
                 div {
                     class: "absolute bottom-0 mb-4 z-5 flex justify-center gap-4",
                     button {
+                        class: "cursor-w-resize",
                         onclick: move |_e| {
                             let checked_new_index = (*question_index.read()).checked_sub(1);
                             if let Some(new_index) = checked_new_index {
@@ -41,6 +42,7 @@ pub fn QuestionView(topic_title: String) -> Element {
                         "<- Previous Question",
                     },
                     button {
+                        class: "cursor-help",
                         onclick: move |_e| {
                             let new_index = rand::random_range(0..questions_len);
                             *question_index.write() = new_index;
@@ -48,6 +50,7 @@ pub fn QuestionView(topic_title: String) -> Element {
                         "?? Random Question",
                     },
                     button {
+                        class: "cursor-e-resize",
                         onclick: move |_e| {
                             let new_index = *question_index.read() + 1;
                             if new_index < questions_len {

@@ -20,7 +20,7 @@ pub fn HomeView() -> Element {
     match topics_cloned {
         Some(topics) => rsx! {
             div {
-                class: "flex flex-col justify-center items-center h-screen bg-gray-100 p-8 gap-4",
+                class: "flex flex-col justify-center items-center h-full min-h-screen bg-gray-100 p-8 gap-4",
                 h1 {
                     class: "text-5xl font-bold md-4",
                     "Pick a topic"
@@ -29,23 +29,24 @@ pub fn HomeView() -> Element {
                     for topic in topics {
                         li {
                             Link {
-                                class: "text-2xl cursor-pointer",
+                                class: "text-2xl cursor-pointer ",
                                 to: Route::QuestionView {
                                     topic_title: {topic.title.clone()},
                                 },
-                                "{topic.title}"
+                                p {
+                                    class: "m-1 p-2 rounded-lg w-full border-2 border-gray-300 bg-white",
+                                    "{topic.title}"
+                                }
                             }
                         }
                     }
-
-
-                    button {
-                        class: "text-xl text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800",
-                        onclick: move |_e| {
-                            *topics_signal.write() = None;
-                        },
-                        "Clear topic memory"
-                    }
+                }
+                button {
+                    class: "text-xl text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800",
+                    onclick: move |_e| {
+                        *topics_signal.write() = None;
+                    },
+                    "Clear topic memory"
                 }
             }
         },

@@ -8,6 +8,8 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-400: oklch(70.4% 0.191 22.216);
+    --color-red-700: oklch(50.5% 0.213 27.518);
+    --color-red-800: oklch(44.4% 0.177 26.899);
     --color-green-400: oklch(79.2% 0.209 151.711);
     --color-blue-300: oklch(80.9% 0.105 251.813);
     --color-blue-500: oklch(62.3% 0.214 259.815);
@@ -201,6 +203,15 @@
   .z-10 {
     z-index: 10;
   }
+  .m-1 {
+    margin: calc(var(--spacing) * 1);
+  }
+  .m-2 {
+    margin: calc(var(--spacing) * 2);
+  }
+  .m-4 {
+    margin: calc(var(--spacing) * 4);
+  }
   .m-8 {
     margin: calc(var(--spacing) * 8);
   }
@@ -221,6 +232,9 @@
   }
   .mb-8 {
     margin-bottom: calc(var(--spacing) * 8);
+  }
+  .mb-16 {
+    margin-bottom: calc(var(--spacing) * 16);
   }
   .ml-4 {
     margin-left: calc(var(--spacing) * 4);
@@ -243,6 +257,9 @@
   .h-screen {
     height: 100vh;
   }
+  .min-h-screen {
+    min-height: 100vh;
+  }
   .w-0 {
     width: calc(var(--spacing) * 0);
   }
@@ -258,8 +275,17 @@
   .border-collapse {
     border-collapse: collapse;
   }
+  .cursor-e-resize {
+    cursor: e-resize;
+  }
+  .cursor-help {
+    cursor: help;
+  }
   .cursor-pointer {
     cursor: pointer;
+  }
+  .cursor-w-resize {
+    cursor: w-resize;
   }
   .resize {
     resize: both;
@@ -352,6 +378,9 @@
   .bg-red-400 {
     background-color: var(--color-red-400);
   }
+  .bg-red-700 {
+    background-color: var(--color-red-700);
+  }
   .bg-white {
     background-color: var(--color-white);
   }
@@ -363,6 +392,12 @@
   }
   .object-fill {
     object-fit: fill;
+  }
+  .p-1 {
+    padding: calc(var(--spacing) * 1);
+  }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
   }
   .p-4 {
     padding: calc(var(--spacing) * 4);
@@ -378,6 +413,9 @@
   }
   .py-2\.5 {
     padding-block: calc(var(--spacing) * 2.5);
+  }
+  .pb-8 {
+    padding-bottom: calc(var(--spacing) * 8);
   }
   .text-2xl {
     font-size: var(--text-2xl);
@@ -428,6 +466,13 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-blue-800);
+      }
+    }
+  }
+  .hover\:bg-red-800 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-red-800);
       }
     }
   }
