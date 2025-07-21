@@ -1,5 +1,10 @@
 [application]
-asset_dir = "assets" # TODO: Make sure the app doesn't need any assets
+# asset_dir = "assets" # The app no longer needs assets, as it uses hotlinking instead
+
+[bundle]
+identifier = "dev.pages.ahi"
+publisher = "ahi"
+icon = ["assets/icon.png"]
 
 [web.app]
 
