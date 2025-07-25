@@ -1,5 +1,5 @@
 [package]
-name = "autoskola_eztests"
+name = "autoskola_testy"
 version = "0.1.0"
 authors = ["ahi6 <60984726+ahi6@users.noreply.github.com>"]
 edition = "2021"
@@ -8,7 +8,7 @@ edition = "2021"
 
 [dependencies]
 dioxus = { version = "0.6.0", features = ["router"] }
-dioxus-sdk = {version = "0.6.0", features = ["storage"]}
+dioxus-sdk = { version = "0.6.0", features = ["storage"] }
 downloader4etesty2 = { path = "../downloader4etesty2" }
 rand = "0.9.1"
 # reqwest = "0.12.22"
