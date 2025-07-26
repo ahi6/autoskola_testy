@@ -18,13 +18,12 @@ Neoficiální grafická aplikace pro procvičování testových otázek pro žad
 - [Dioxus CLI](https://dioxuslabs.com/learn/0.6/getting_started) 
 
 <!--
-### Instalace závislostí
+### Stažení zdrojového kódu
 
-1. **Rust závislosti** (automaticky při prvním buildu)
- 2. **Node.js závislosti** pro Tailwind CSS:
-   ```bash
-   npm install
-   ``` -->
+```bash
+git clone https://github.com/ahi6/autoskola_testy_workspace
+cd autoskola_testy_workspace/autoskola_testy
+```
 
 ### Spuštění aplikace
 
@@ -33,21 +32,6 @@ Neoficiální grafická aplikace pro procvičování testových otázek pro žad
 dx serve --platform desktop
 ```
 
-## 📁 Struktura projektu
-
-```
-src/
-├── main.rs              # Hlavní soubor aplikace a routing
-├── utils.rs             # Pomocné funkce
-├── components/          # Komponenty UI
-│   ├── mod.rs
-│   ├── answer.rs        # Komponenta pro zobrazení odpovědí
-│   └── test_question.rs # Komponenta pro zobrazení otázky
-└── views/               # Hlavní views/stránky
-    ├── mod.rs
-    ├── home_view.rs     # Domovská stránka s výběrem témat
-    └── question_view.rs # Stránka s otázkami
-```
 
 ## 🔧 Konfigurace
 
@@ -74,3 +58,4 @@ Tento projekt je licencován pod EUPL v1.2 licencí - viz soubory `LICENSE` (v �
 
 - [downloader4etesty2](https://github.com/ahi6/downloader4etesty2) - Rust knihovna pro stahování otázek
 - [downloader4etesty2_cli](https://github.com/ahi6/downloader4etesty2_cli) - CLI nástroj pro stahování otázek
+- https://github.com/ahi6/autoskola_testy_workspace - Rust workspace se všemi souvisejícími repozitáři
