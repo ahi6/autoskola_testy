@@ -9,7 +9,7 @@ icon = ["assets/icon.png"]
 [web.app]
 
 # HTML title tag content
-title = "autoskola_eztests"
+title = "Autoškola Testy"
 
 # include `assets` in web platform
 [web.resource]
