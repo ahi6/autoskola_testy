@@ -17,7 +17,6 @@ Neoficiální grafická aplikace pro procvičování testových otázek pro žad
 <!-- - [Node.js](https://nodejs.org/) a npm (pro Tailwind CSS) -->
 - [Dioxus CLI](https://dioxuslabs.com/learn/0.6/getting_started) 
 
-<!--
 ### Stažení zdrojového kódu
 
 ```bash
