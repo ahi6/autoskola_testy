@@ -9,6 +9,27 @@ Neoficiální grafická aplikace pro procvičování testových otázek pro žad
 - 🖥️ Podpora desktopového rozhraní
 - 🎨 Moderní uživatelské rozhraní
 
+## Snímky obrazovky
+<table>
+  <tr>
+    <th>Uvítací obrazovka</th>
+    <th>Výběr oblasti k procvičení</th>
+    <th>Otázka</th>
+  </tr>
+  <tr>
+    <td>
+      <img width="300" alt="Welcome screen" src="https://github.com/user-attachments/assets/f0ff61fb-3983-4bff-ab65-03ca55596a33" />
+    </td>
+    <td>
+      <img width="300" alt="Topic select screen" src="https://github.com/user-attachments/assets/34cba36e-cba2-4be1-9ae3-ead9301ff11b" />
+    </td>
+    <td>
+      <img width="300" alt="Question screen" src="https://github.com/user-attachments/assets/c93f8d0d-28f6-4351-8ae7-80501d78a255" />
+    </td>
+  </tr>
+</table>
+
+
 ## 🚀 Rychlý start
 
 ### Předpoklady
